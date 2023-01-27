@@ -7,7 +7,7 @@ public class Despawner : MonoBehaviour{
         Debug.Log("Attempted kill");
 
        
-        if (other.transform.parent.TryGetComponent(out Killable k)){
+        if (other.TryGetComponent(out Killable k)){
             k.Kill();
         }
     }

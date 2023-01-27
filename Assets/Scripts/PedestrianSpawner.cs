@@ -16,7 +16,8 @@ public class PedestrianSpawner : MonoBehaviour{
         if (Time.realtimeSinceStartup - spawnTime >= spawnSpeed){
             spawnTime = Time.realtimeSinceStartup;
 
-            GameObject g = Instantiate(pedestrianPrefab[Random.Range(0,pedestrianPrefab.Length)], transform.position, Quaternion.identity);
+            Vector3 newPos = new Vector3(Random.Range(-5, 5), 0, 0);
+            GameObject g = Instantiate(pedestrianPrefab[Random.Range(0,pedestrianPrefab.Length)], transform.position + newPos, Quaternion.identity);
             g.GetComponent<Checkable>().AssignPosition(targetPos);
         }
     }
